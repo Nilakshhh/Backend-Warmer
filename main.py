@@ -9,6 +9,8 @@ EMAIL_PASS = "lseoehkhouhjkqst"   # Use app password (not raw Gmail pwd)
 TO_EMAIL = "dnilaksh05@gmail.com"
 
 def ping_and_email():
+    status = ""
+    resp = ""
     try:
         resp = requests.get(URL, timeout=10)
         status = f"✅ {URL} responded with {resp.status_code}\n\n{resp.text}"
