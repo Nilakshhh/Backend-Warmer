@@ -1,12 +1,17 @@
 import requests
 import smtplib
 from email.mime.text import MIMEText
+from dotenv import load_dotenv
+import os
 
 # --- Config ---
-URL = "https://two048-backend.onrender.com"
-EMAIL_USER = "dnilaksh05@gmail.com"
-EMAIL_PASS = "lseoehkhouhjkqst"   # Use app password (not raw Gmail pwd)
-TO_EMAIL = "dnilaksh05@gmail.com"
+load_dotenv()
+
+URL = os.getenv("URL")
+EMAIL_USER = os.getenv("EMAIL_USER")
+EMAIL_PASS = os.getenv("EMAIL_PASS")
+TO_EMAIL = os.getenv("TO_EMAIL")
+
 
 def ping_and_email():
     status = ""
